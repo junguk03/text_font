@@ -40,3 +40,33 @@ fontSizeSlider.addEventListener('input', function() {
 if (fontButtons.length > 0) {
     fontButtons[0].classList.add('active');
 }
+
+
+// 복사 버튼 클릭 이벤트 (맨 아래에 추가)
+copyBtn.addEventListener('click', function() {
+    const text = preview.textContent;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        // 복사 성공
+        copyBtn.textContent = '✓ 복사됨!';
+        copyBtn.classList.add('copied');
+        
+        setTimeout(() => {
+            copyBtn.textContent = '복사하기';
+            copyBtn.classList.remove('copied');
+        }, 2000);
+    }).catch(err => {
+        // 복사 실패 (구형 브라우저 대응)
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        copyBtn.textContent = '✓ 복사됨!';
+        setTimeout(() => {
+            copyBtn.textContent = '복사하기';
+        }, 2000);
+    });
+});
