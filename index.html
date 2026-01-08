@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Black+Han+Sans&family=Jua&family=Do+Hyeon&family=Gamja+Flower&family=Poor+Story&family=Sunflower:wght@300;500;700&family=Cute+Font&family=Single+Day&family=Stylish&family=East+Sea+Dokdo&family=Gothic+A1:wght@400;700&family=Gugi&family=Hi+Melody&family=Kirang+Haerang&family=Song+Myung&family=Yeon+Sung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Black+Han+Sans&family=Jua&family=Do+Hyeon&family=Gamja+Flower&family=Poor+Story&family=Sunflower:wght@300;500;700&family=Cute+Font&family=Single+Day&family=Stylish&family=East+Sea+Dokdo&family=Gothic+A1:wght@400;700&family=Gugi&family=Hi+Melody&family=Kirang+Haerang&family=Song+Myung&family=Yeon+Sung&family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&family=Satisfy&family=Cookie&family=Allura&family=Sacramento&family=Tangerine:wght@400;700&family=Amatic+SC:wght@400;700&family=Caveat:wght@400;700&family=Indie+Flower&family=Permanent+Marker&family=Shadows+Into+Light&family=Kaushan+Script&family=Abril+Fatface&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -19,6 +19,8 @@
 
         <div class="font-selector">
             <h2>폰트 선택</h2>
+
+            <h3 class="category-title">한글 폰트</h3>
             <div class="font-grid">
                 <button class="font-btn" data-font="Noto Sans KR">Noto Sans KR</button>
                 <button class="font-btn" data-font="Nanum Gothic">나눔고딕</button>
@@ -41,10 +43,45 @@
                 <button class="font-btn" data-font="Song Myung">송명체</button>
                 <button class="font-btn" data-font="Yeon Sung">연성체</button>
             </div>
+
+            <h3 class="category-title">유럽 세리프체 (클래식)</h3>
+            <div class="font-grid">
+                <button class="font-btn european" data-font="Playfair Display">Playfair Display</button>
+                <button class="font-btn european" data-font="Merriweather">Merriweather</button>
+                <button class="font-btn european" data-font="Lora">Lora</button>
+                <button class="font-btn european" data-font="Cormorant Garamond">Cormorant Garamond</button>
+                <button class="font-btn european" data-font="Cinzel">Cinzel</button>
+                <button class="font-btn european" data-font="Abril Fatface">Abril Fatface</button>
+            </div>
+
+            <h3 class="category-title">스크립트체 (필기/손글씨)</h3>
+            <div class="font-grid">
+                <button class="font-btn european" data-font="Dancing Script">Dancing Script</button>
+                <button class="font-btn european" data-font="Great Vibes">Great Vibes</button>
+                <button class="font-btn european" data-font="Pacifico">Pacifico</button>
+                <button class="font-btn european" data-font="Satisfy">Satisfy</button>
+                <button class="font-btn european" data-font="Cookie">Cookie</button>
+                <button class="font-btn european" data-font="Allura">Allura</button>
+                <button class="font-btn european" data-font="Sacramento">Sacramento</button>
+                <button class="font-btn european" data-font="Tangerine">Tangerine</button>
+                <button class="font-btn european" data-font="Kaushan Script">Kaushan Script</button>
+            </div>
+
+            <h3 class="category-title">캐주얼/손글씨체</h3>
+            <div class="font-grid">
+                <button class="font-btn european" data-font="Amatic SC">Amatic SC</button>
+                <button class="font-btn european" data-font="Caveat">Caveat</button>
+                <button class="font-btn european" data-font="Indie Flower">Indie Flower</button>
+                <button class="font-btn european" data-font="Permanent Marker">Permanent Marker</button>
+                <button class="font-btn european" data-font="Shadows Into Light">Shadows Into Light</button>
+            </div>
         </div>
 
         <div class="preview-section">
-            <h2>미리보기</h2>
+            <div class="preview-header">
+                <h2>미리보기</h2>
+                <button id="copyBtn" class="copy-btn">복사하기</button>
+            </div>
             <div id="preview" class="preview-text">안녕하세요! 폰트를 선택해보세요.</div>
         </div>
 

@@ -4,6 +4,7 @@ const preview = document.getElementById('preview');
 const fontButtons = document.querySelectorAll('.font-btn');
 const fontSizeSlider = document.getElementById('fontSize');
 const sizeValue = document.getElementById('sizeValue');
+const copyBtn = document.getElementById('copyBtn');
 
 // 현재 선택된 폰트 저장
 let currentFont = 'Noto Sans KR';

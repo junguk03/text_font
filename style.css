@@ -33,6 +33,20 @@ h2 {
     font-size: 1.5em;
 }
 
+h3.category-title {
+    color: #667eea;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+}
+
+h3.category-title:first-of-type {
+    margin-top: 0;
+}
+
 .input-section {
     margin-bottom: 30px;
 }
@@ -86,11 +100,56 @@ h2 {
     transform: scale(1.05);
 }
 
+.font-btn.european {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.font-btn.european:hover {
+    background: linear-gradient(135deg, #fa709a 20%, #fee140 120%);
+}
+
 .preview-section {
     margin-bottom: 30px;
     padding: 30px;
     background: #f8f9fa;
     border-radius: 10px;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.preview-header h2 {
+    margin-bottom: 0;
+}
+
+.copy-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn.copied {
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
 }
 
 .preview-text {
