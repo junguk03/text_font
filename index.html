@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>폰트 미리보기</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.0.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -98,6 +98,56 @@
                 <button id="copyBtn" class="copy-btn">복사하기</button>
             </div>
             <div id="preview" class="preview-text">안녕하세요! 폰트를 선택해보세요.</div>
+
+            <div class="unicode-style-selector">
+                <label>유니코드 스타일:</label>
+                <select id="unicodeStyle">
+                    <optgroup label="🔥 인기 스타일">
+                        <option value="bold">𝗕𝗼𝗹𝗱 (볼드)</option>
+                        <option value="italic">𝘐𝘵𝘢𝘭𝘪𝘤 (이탤릭)</option>
+                        <option value="bold-italic">𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘 (볼드+이탤릭)</option>
+                    </optgroup>
+                    <optgroup label="✨ 우아한 스타일">
+                        <option value="script">𝓢𝓬𝓻𝓲𝓹𝓽 (우아한 필기체)</option>
+                        <option value="script-bold">𝓢𝓬𝓻𝓲𝓹𝓽 𝓑𝓸𝓵𝓭 (진한 필기체)</option>
+                    </optgroup>
+                    <optgroup label="🏰 영국/유럽 클래식">
+                        <option value="fraktur">𝔉𝔯𝔞𝔨𝔱𝔲𝔯 (고딕체)</option>
+                        <option value="fraktur-bold">𝕱𝖗𝖆𝖐𝖙𝖚𝖗 𝕭𝖔𝖑𝖉 (진한 고딕체)</option>
+                        <option value="double">𝔻𝕠𝕦𝕓𝕝𝕖 (더블라인)</option>
+                    </optgroup>
+                    <optgroup label="💻 모던 스타일">
+                        <option value="monospace">𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎 (타자기체)</option>
+                        <option value="sans">𝖲𝖺𝗇𝗌 (산세리프)</option>
+                        <option value="sans-italic">𝘚𝘢𝘯𝘴 𝘐𝘵𝘢𝘭𝘪𝘤 (산세리프 이탤릭)</option>
+                        <option value="sans-bold-italic">𝙎𝙖𝙣𝙨 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘 (산세리프 굵은 이탤릭)</option>
+                    </optgroup>
+                    <optgroup label="📚 세리프 스타일">
+                        <option value="serif-bold">𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝 (세리프 볼드)</option>
+                        <option value="serif-italic">𝐼𝑡𝑎𝑙𝑖𝑐 𝑆𝑒𝑟𝑖𝑓 (세리프 이탤릭)</option>
+                        <option value="serif-bold-italic">𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄 𝑺𝒆𝒓𝒊𝒇 (세리프 볼드 이탤릭)</option>
+                    </optgroup>
+                    <optgroup label="🎨 특수 스타일">
+                        <option value="circle">Ⓒⓘⓡⓒⓛⓔ (원형)</option>
+                        <option value="circle-black">🅒🅘🅡🅒🅛🅔 (검은 원)</option>
+                        <option value="square">🅂🅀🅄🄰🅁🄴 (사각형)</option>
+                        <option value="parenthesis">⒫⒜⒭⒠⒩ (괄호)</option>
+                    </optgroup>
+                    <optgroup label="🌏 아시아 스타일">
+                        <option value="fullwidth">Ｆｕｌｌｗｉｄｔｈ (전각)</option>
+                    </optgroup>
+                    <optgroup label="🎪 재미있는 스타일">
+                        <option value="upside-down">uʍop-ǝpᴉsdn (거꾸로)</option>
+                        <option value="superscript">ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ (위첨자)</option>
+                        <option value="subscript">ₛᵤbₛcᵣᵢₚₜ (아래첨자)</option>
+                        <option value="small-caps">Sᴍᴀʟʟ Cᴀᴘs (작은 대문자)</option>
+                        <option value="underline">U̲n̲d̲e̲r̲l̲i̲n̲e̲ (밑줄)</option>
+                        <option value="strikethrough">S̶t̶r̶i̶k̶e̶ (취소선)</option>
+                        <option value="slash">Ⱥbćđëƒǥ (슬래시)</option>
+                        <option value="currency">₵ɄⱤⱤɆ₦₵Ɏ (화폐기호)</option>
+                    </optgroup>
+                </select>
+            </div>
         </div>
 
         <div class="size-control">
@@ -106,9 +156,8 @@
         </div>
     </div>
 
-    <!-- 라이브러리 먼저 로드 -->
+    <!-- html2canvas 라이브러리 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <!-- 그 다음 script.js -->
-    <script src="script.js"></script>
+    <script src="script.js?v=1.0.0"></script>
 </body>
 </html>
