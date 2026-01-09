@@ -5,23 +5,49 @@ const fontButtons = document.querySelectorAll('.font-btn');
 const fontSizeSlider = document.getElementById('fontSize');
 const sizeValue = document.getElementById('sizeValue');
 const copyBtn = document.getElementById('copyBtn');
-const unicodeStyle = document.getElementById('unicodeStyle');
 
-// 현재 선택된 폰트 저장
+// 현재 선택된 폰트와 유니코드 스타일 저장
 let currentFont = 'Noto Sans KR';
+let currentUnicodeStyle = null;
+let originalText = '안녕하세요! 폰트를 선택해보세요.';
 
 // 텍스트 입력 이벤트
 textInput.addEventListener('input', function() {
-    preview.textContent = this.value || '여기에 미리보기가 표시됩니다.';
+    originalText = this.value || '여기에 미리보기가 표시됩니다.';
+    updatePreview();
 });
+
+// 미리보기 업데이트 함수
+function updatePreview() {
+    if (currentUnicodeStyle) {
+        preview.textContent = convertToUnicode(originalText, currentUnicodeStyle);
+        preview.style.fontFamily = '';
+    } else {
+        preview.textContent = originalText;
+        preview.style.fontFamily = `'${currentFont}', sans-serif`;
+    }
+}
 
 // 폰트 버튼 클릭 이벤트
 fontButtons.forEach(button => {
     button.addEventListener('click', function() {
-        fontButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        currentFont = this.getAttribute('data-font');
-        preview.style.fontFamily = `'${currentFont}', sans-serif`;
+        // 유니코드 버튼인지 확인
+        const unicodeStyle = this.getAttribute('data-unicode');
+
+        if (unicodeStyle) {
+            // 유니코드 스타일 버튼
+            fontButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            currentUnicodeStyle = unicodeStyle;
+            updatePreview();
+        } else {
+            // 일반 폰트 버튼
+            fontButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            currentFont = this.getAttribute('data-font');
+            currentUnicodeStyle = null;
+            updatePreview();
+        }
     });
 });
 
@@ -237,14 +263,11 @@ function convertToUnicode(text, style) {
     }).join('');
 }
 
-// 유니코드 스타일 텍스트 복사 버튼
+// 복사 버튼
 copyBtn.addEventListener('click', async function() {
     try {
         const text = preview.textContent;
-        const style = unicodeStyle.value;
-        const convertedText = convertToUnicode(text, style);
-
-        await navigator.clipboard.writeText(convertedText);
+        await navigator.clipboard.writeText(text);
 
         copyBtn.textContent = '✓ 복사됨!';
         copyBtn.classList.add('copied');

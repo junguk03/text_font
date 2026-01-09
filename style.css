@@ -108,6 +108,14 @@ h3.category-title:first-of-type {
     background: linear-gradient(135deg, #fa709a 20%, #fee140 120%);
 }
 
+.font-btn.unicode {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.font-btn.unicode:hover {
+    background: linear-gradient(135deg, #30cfd0 20%, #330867 120%);
+}
+
 .preview-section {
     margin-bottom: 30px;
     padding: 30px;
@@ -155,36 +163,6 @@ h3.category-title:first-of-type {
 
 .copy-btn.copied {
     background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
-}
-
-.unicode-style-selector {
-    margin-top: 15px;
-    padding: 15px;
-    background: white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.unicode-style-selector label {
-    font-weight: 600;
-    color: #555;
-}
-
-.unicode-style-selector select {
-    flex: 1;
-    padding: 10px 15px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: border-color 0.3s;
-}
-
-.unicode-style-selector select:focus {
-    outline: none;
-    border-color: #667eea;
 }
 
 .preview-text {
