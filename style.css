@@ -52,10 +52,21 @@ h3.category-title:first-of-type {
     color: white;
     padding: 15px 20px;
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     font-size: 16px;
     line-height: 1.5;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.help-message {
+    background: #f0f0f0;
+    color: #666;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.4;
+    border-left: 3px solid #999;
 }
 
 .input-section {
