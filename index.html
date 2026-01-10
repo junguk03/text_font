@@ -19,116 +19,47 @@
         <h1>폰트 미리보기</h1>
 
         <div class="input-section">
-            <textarea id="textInput" placeholder="여기에 텍스트를 입력하세요...">안녕하세요! 폰트를 선택해보세요.</textarea>
+            <textarea id="textInput" placeholder="여기에 텍스트를 입력하세요 (영어/숫자만 변환됨)">Hello World! 123</textarea>
         </div>
 
         <div class="font-selector">
-            <h2>폰트 선택</h2>
+            <h2>유니코드 스타일 변환</h2>
+            <p class="info-message">💡 영어와 숫자만 변환됩니다. 디스코드, 카카오톡 등에서 복사/붙여넣기 시 스타일이 유지됩니다!</p>
 
-            <h3 class="category-title">한글 폰트</h3>
-            <div class="font-grid">
-                <button class="font-btn" data-font="Noto Sans KR">Noto Sans KR</button>
-                <button class="font-btn" data-font="Nanum Gothic">나눔고딕</button>
-                <button class="font-btn" data-font="Nanum Myeongjo">나눔명조</button>
-                <button class="font-btn" data-font="Nanum Pen Script">나눔손글씨 펜</button>
-                <button class="font-btn" data-font="Black Han Sans">검은고딕</button>
-                <button class="font-btn" data-font="Jua">주아체</button>
-                <button class="font-btn" data-font="Do Hyeon">도현체</button>
-                <button class="font-btn" data-font="Gamja Flower">감자꽃체</button>
-                <button class="font-btn" data-font="Poor Story">가난한 이야기</button>
-                <button class="font-btn" data-font="Sunflower">해바라기체</button>
-                <button class="font-btn" data-font="Cute Font">귀여운체</button>
-                <button class="font-btn" data-font="Single Day">싱글데이</button>
-                <button class="font-btn" data-font="Stylish">스타일리시</button>
-                <button class="font-btn" data-font="East Sea Dokdo">동해독도</button>
-                <button class="font-btn" data-font="Gothic A1">고딕 A1</button>
-                <button class="font-btn" data-font="Gugi">구기체</button>
-                <button class="font-btn" data-font="Hi Melody">하이멜로디</button>
-                <button class="font-btn" data-font="Kirang Haerang">기랑해랑체</button>
-                <button class="font-btn" data-font="Song Myung">송명체</button>
-                <button class="font-btn" data-font="Yeon Sung">연성체</button>
-                <button class="font-btn" data-font="IBM Plex Sans KR">IBM Plex Sans KR</button>
-                <button class="font-btn" data-font="Orbit">오빗체</button>
-                <button class="font-btn" data-font="Black And White Picture">흑백사진체</button>
-                <button class="font-btn" data-font="Gaegu">개구쟁이체</button>
-                <button class="font-btn" data-font="Dongle">동글체</button>
-                <button class="font-btn" data-font="Gowun Batang">고운바탕</button>
-                <button class="font-btn" data-font="Gowun Dodum">고운돋움</button>
-                <button class="font-btn" data-font="Hahmlet">함릿체</button>
-                <button class="font-btn" data-font="Dokdo">독도체</button>
-                <button class="font-btn" data-font="Bagel Fat One">베이글</button>
-            </div>
-
-            <h3 class="category-title">유럽 세리프체 (클래식)</h3>
-            <div class="font-grid">
-                <button class="font-btn european" data-font="Playfair Display">Playfair Display</button>
-                <button class="font-btn european" data-font="Merriweather">Merriweather</button>
-                <button class="font-btn european" data-font="Lora">Lora</button>
-                <button class="font-btn european" data-font="Cormorant Garamond">Cormorant Garamond</button>
-                <button class="font-btn european" data-font="Cinzel">Cinzel</button>
-                <button class="font-btn european" data-font="Abril Fatface">Abril Fatface</button>
-            </div>
-
-            <h3 class="category-title">스크립트체 (필기/손글씨)</h3>
-            <div class="font-grid">
-                <button class="font-btn european" data-font="Dancing Script">Dancing Script</button>
-                <button class="font-btn european" data-font="Great Vibes">Great Vibes</button>
-                <button class="font-btn european" data-font="Pacifico">Pacifico</button>
-                <button class="font-btn european" data-font="Satisfy">Satisfy</button>
-                <button class="font-btn european" data-font="Cookie">Cookie</button>
-                <button class="font-btn european" data-font="Allura">Allura</button>
-                <button class="font-btn european" data-font="Sacramento">Sacramento</button>
-                <button class="font-btn european" data-font="Tangerine">Tangerine</button>
-                <button class="font-btn european" data-font="Kaushan Script">Kaushan Script</button>
-            </div>
-
-            <h3 class="category-title">캐주얼/손글씨체</h3>
-            <div class="font-grid">
-                <button class="font-btn european" data-font="Amatic SC">Amatic SC</button>
-                <button class="font-btn european" data-font="Caveat">Caveat</button>
-                <button class="font-btn european" data-font="Indie Flower">Indie Flower</button>
-                <button class="font-btn european" data-font="Permanent Marker">Permanent Marker</button>
-                <button class="font-btn european" data-font="Shadows Into Light">Shadows Into Light</button>
-            </div>
-
-            <h3 class="category-title">유니코드 스타일 (인기)</h3>
+            <h3 class="category-title">인기</h3>
             <div class="font-grid">
                 <button class="font-btn unicode" data-unicode="bold">𝗕𝗼𝗹𝗱</button>
                 <button class="font-btn unicode" data-unicode="italic">𝘐𝘵𝘢𝘭𝘪𝘤</button>
                 <button class="font-btn unicode" data-unicode="bold-italic">𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘</button>
                 <button class="font-btn unicode" data-unicode="script">𝓢𝓬𝓻𝓲𝓹𝓽</button>
                 <button class="font-btn unicode" data-unicode="script-bold">𝓢𝓬𝓻𝓲𝓹𝓽 𝓑𝓸𝓵𝓭</button>
+                <button class="font-btn unicode" data-unicode="circle">Ⓒⓘⓡⓒⓛⓔ</button>
+                <button class="font-btn unicode" data-unicode="circle-black">🅒🅘🅡🅒🅛🅔</button>
+                <button class="font-btn unicode" data-unicode="square">🅂🅀🅄🄰🅁🄴</button>
             </div>
 
-            <h3 class="category-title">유니코드 스타일 (클래식)</h3>
+            <h3 class="category-title">클래식</h3>
             <div class="font-grid">
                 <button class="font-btn unicode" data-unicode="fraktur">𝔉𝔯𝔞𝔨𝔱𝔲𝔯</button>
                 <button class="font-btn unicode" data-unicode="fraktur-bold">𝕱𝖗𝖆𝖐𝖙𝖚𝖗 𝕭𝖔𝖑𝖉</button>
                 <button class="font-btn unicode" data-unicode="double">𝔻𝕠𝕦𝕓𝕝𝕖</button>
-            </div>
-
-            <h3 class="category-title">유니코드 스타일 (모던)</h3>
-            <div class="font-grid">
-                <button class="font-btn unicode" data-unicode="monospace">𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎</button>
-                <button class="font-btn unicode" data-unicode="sans">𝖲𝖺𝗇𝗌</button>
-                <button class="font-btn unicode" data-unicode="sans-italic">𝘚𝘢𝘯𝘴 𝘐𝘵𝘢𝘭𝘪𝘤</button>
-                <button class="font-btn unicode" data-unicode="sans-bold-italic">𝙎𝙖𝙣𝙨 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘</button>
                 <button class="font-btn unicode" data-unicode="serif-bold">𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝</button>
                 <button class="font-btn unicode" data-unicode="serif-italic">𝐼𝑡𝑎𝑙𝑖𝑐 𝑆𝑒𝑟𝑖𝑓</button>
                 <button class="font-btn unicode" data-unicode="serif-bold-italic">𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄 𝑺𝒆𝒓𝒊𝒇</button>
             </div>
 
-            <h3 class="category-title">유니코드 스타일 (특수)</h3>
+            <h3 class="category-title">모던</h3>
             <div class="font-grid">
-                <button class="font-btn unicode" data-unicode="circle">Ⓒⓘⓡⓒⓛⓔ</button>
-                <button class="font-btn unicode" data-unicode="circle-black">🅒🅘🅡🅒🅛🅔</button>
-                <button class="font-btn unicode" data-unicode="square">🅂🅀🅄🄰🅁🄴</button>
-                <button class="font-btn unicode" data-unicode="parenthesis">⒫⒜⒭⒠⒩</button>
+                <button class="font-btn unicode" data-unicode="monospace">𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎</button>
+                <button class="font-btn unicode" data-unicode="sans">𝖲𝖺𝗇𝗌</button>
+                <button class="font-btn unicode" data-unicode="sans-italic">𝘚𝘢𝘯𝘴 𝘐𝘵𝘢𝘭𝘪𝘤</button>
+                <button class="font-btn unicode" data-unicode="sans-bold-italic">𝙎𝙖𝙣𝙨 𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘</button>
                 <button class="font-btn unicode" data-unicode="fullwidth">Ｆｕｌｌｗｉｄｔｈ</button>
             </div>
 
-            <h3 class="category-title">유니코드 스타일 (재미)</h3>
+            <h3 class="category-title">특수</h3>
             <div class="font-grid">
+                <button class="font-btn unicode" data-unicode="parenthesis">⒫⒜⒭⒠⒩</button>
                 <button class="font-btn unicode" data-unicode="upside-down">uʍop-ǝpᴉsdn</button>
                 <button class="font-btn unicode" data-unicode="superscript">ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ</button>
                 <button class="font-btn unicode" data-unicode="subscript">ₛᵤbₛcᵣᵢₚₜ</button>
@@ -145,7 +76,7 @@
                 <h2>미리보기</h2>
                 <button id="copyBtn" class="copy-btn">복사하기</button>
             </div>
-            <div id="preview" class="preview-text">안녕하세요! 폰트를 선택해보세요.</div>
+            <div id="preview" class="preview-text">Hello World! 123</div>
         </div>
 
         <div class="size-control">

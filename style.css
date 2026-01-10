@@ -47,6 +47,17 @@ h3.category-title:first-of-type {
     margin-top: 0;
 }
 
+.info-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
 .input-section {
     margin-bottom: 30px;
 }

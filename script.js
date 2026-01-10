@@ -6,14 +6,13 @@ const fontSizeSlider = document.getElementById('fontSize');
 const sizeValue = document.getElementById('sizeValue');
 const copyBtn = document.getElementById('copyBtn');
 
-// 현재 선택된 폰트와 유니코드 스타일 저장
-let currentFont = 'Noto Sans KR';
+// 현재 선택된 유니코드 스타일 저장
 let currentUnicodeStyle = null;
-let originalText = '안녕하세요! 폰트를 선택해보세요.';
+let originalText = 'Hello World! 123';
 
 // 텍스트 입력 이벤트
 textInput.addEventListener('input', function() {
-    originalText = this.value || '여기에 미리보기가 표시됩니다.';
+    originalText = this.value || 'Hello World! 123';
     updatePreview();
 });
 
@@ -21,33 +20,20 @@ textInput.addEventListener('input', function() {
 function updatePreview() {
     if (currentUnicodeStyle) {
         preview.textContent = convertToUnicode(originalText, currentUnicodeStyle);
-        preview.style.fontFamily = '';
     } else {
         preview.textContent = originalText;
-        preview.style.fontFamily = `'${currentFont}', sans-serif`;
     }
 }
 
-// 폰트 버튼 클릭 이벤트
+// 유니코드 버튼 클릭 이벤트
 fontButtons.forEach(button => {
     button.addEventListener('click', function() {
-        // 유니코드 버튼인지 확인
         const unicodeStyle = this.getAttribute('data-unicode');
 
-        if (unicodeStyle) {
-            // 유니코드 스타일 버튼
-            fontButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            currentUnicodeStyle = unicodeStyle;
-            updatePreview();
-        } else {
-            // 일반 폰트 버튼
-            fontButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            currentFont = this.getAttribute('data-font');
-            currentUnicodeStyle = null;
-            updatePreview();
-        }
+        fontButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        currentUnicodeStyle = unicodeStyle;
+        updatePreview();
     });
 });
 
