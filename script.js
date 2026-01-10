@@ -54,9 +54,11 @@ function convertToUnicode(text, style) {
         'script-bold': { offset: 0x1D4D0, numbers: null },
         'fraktur': { offset: 0x1D504, numbers: null },
         'fraktur-bold': { offset: 0x1D56C, numbers: null },
+        'medieval': { offset: 0x1D56C, numbers: null }, // Same as fraktur-bold
         'double': { offset: 0x1D538, numbers: 0x1D7D8 },
         'monospace': { offset: 0x1D670, numbers: 0x1D7F6 },
         'sans': { offset: 0x1D5A0, numbers: 0x1D7E2 },
+        'sans-bold': { offset: 0x1D5D4, numbers: 0x1D7CE },
         'sans-italic': { offset: 0x1D608, numbers: null },
         'sans-bold-italic': { offset: 0x1D63C, numbers: null },
         'serif-bold': { offset: 0x1D400, numbers: 0x1D7CE },
@@ -224,6 +226,68 @@ function convertToUnicode(text, style) {
             }
             return char;
         }).join('');
+    }
+
+    if (style === 'overline') {
+        return text.split('').map(char => {
+            if (char !== ' ') {
+                return char + '\u0305'; // combining overline
+            }
+            return char;
+        }).join('');
+    }
+
+    if (style === 'double-underline') {
+        return text.split('').map(char => {
+            if (char !== ' ') {
+                return char + '\u0333'; // combining double underline
+            }
+            return char;
+        }).join('');
+    }
+
+    if (style === 'negative-circle') {
+        return text.split('').map(char => circleBlackMap[char] || char).join('');
+    }
+
+    if (style === 'negative-square') {
+        const negativeSquareMap = {
+            'a': '🆀', 'b': '🆀', 'c': '🆀', 'd': '🆀', 'e': '🅴', 'f': '🅵', 'g': '🅶', 'h': '🅷', 'i': '🅸', 'j': '🅹',
+            'k': '🅺', 'l': '🅻', 'm': '🅼', 'n': '🅽', 'o': '🅾', 'p': '🅿', 'q': '🆀', 'r': '🆁', 's': '🆂', 't': '🆃',
+            'u': '🆄', 'v': '🆅', 'w': '🆆', 'x': '🆇', 'y': '🆈', 'z': '🆉',
+            'A': '🅰', 'B': '🅱', 'C': '🅲', 'D': '🅳', 'E': '🅴', 'F': '🅵', 'G': '🅶', 'H': '🅷', 'I': '🅸', 'J': '🅹',
+            'K': '🅺', 'L': '🅻', 'M': '🅼', 'N': '🅽', 'O': '🅾', 'P': '🅿', 'Q': '🆀', 'R': '🆁', 'S': '🆂', 'T': '🆃',
+            'U': '🆄', 'V': '🆅', 'W': '🆆', 'X': '🆇', 'Y': '🆈', 'Z': '🆉'
+        };
+        return text.split('').map(char => negativeSquareMap[char] || char).join('');
+    }
+
+    if (style === 'bubble') {
+        return text.split('').map(char => circleMap[char] || char).join('');
+    }
+
+    if (style === 'mirror') {
+        const mirrorMap = {
+            'a': 'ɒ', 'b': 'd', 'c': 'ɔ', 'd': 'b', 'e': 'ɘ', 'f': 'ʇ', 'g': 'ǫ', 'h': 'ʜ', 'i': 'i', 'j': 'ႱႱ',
+            'k': 'ʞ', 'l': 'l', 'm': 'm', 'n': 'n', 'o': 'o', 'p': 'q', 'q': 'p', 'r': 'ɿ', 's': 'ƨ', 't': 'ƚ',
+            'u': 'u', 'v': 'v', 'w': 'w', 'x': 'x', 'y': 'ʏ', 'z': 'z',
+            'A': 'A', 'B': 'ᙠ', 'C': 'Ɔ', 'D': 'ᗡ', 'E': 'Ǝ', 'F': 'ꟻ', 'G': 'Ә', 'H': 'H', 'I': 'I', 'J': 'Ⴑ',
+            'K': 'ﻼ', 'L': '⅃', 'M': 'M', 'N': 'N', 'O': 'O', 'P': 'ᑫ', 'Q': 'ტ', 'R': 'ᴙ', 'S': 'Ƨ', 'T': 'T',
+            'U': 'U', 'V': 'V', 'W': 'W', 'X': 'X', 'Y': 'Y', 'Z': 'Z'
+        };
+        return text.split('').map(char => mirrorMap[char] || char).reverse().join('');
+    }
+
+    if (style === 'asian') {
+        const asianMap = {
+            'a': 'ﾑ', 'b': '乃', 'c': 'ᄃ', 'd': 'り', 'e': '乇', 'f': 'ｷ', 'g': 'ム', 'h': 'ん', 'i': 'ﾉ', 'j': 'ﾌ',
+            'k': 'ズ', 'l': 'ﾚ', 'm': 'ﾶ', 'n': '刀', 'o': 'の', 'p': 'ｱ', 'q': 'ゐ', 'r': '尺', 's': '丂', 't': 'ｲ',
+            'u': 'ひ', 'v': 'ｳ', 'w': 'W', 'x': 'ﾒ', 'y': 'ﾘ', 'z': '乙',
+            'A': 'ﾑ', 'B': '乃', 'C': 'ᄃ', 'D': 'り', 'E': '乇', 'F': 'ｷ', 'G': 'ム', 'H': 'ん', 'I': 'ﾉ', 'J': 'ﾌ',
+            'K': 'ズ', 'L': 'ﾚ', 'M': 'ﾶ', 'N': '刀', 'O': 'の', 'P': 'ｱ', 'Q': 'ゐ', 'R': '尺', 'S': '丂', 'T': 'ｲ',
+            'U': 'ひ', 'V': 'ｳ', 'W': 'W', 'X': 'ﾒ', 'Y': 'ﾘ', 'Z': '乙'
+        };
+        return text.split('').map(char => asianMap[char] || char).join('');
     }
 
     const map = unicodeMap[style];
