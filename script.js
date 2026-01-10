@@ -290,6 +290,38 @@ function convertToUnicode(text, style) {
         return text.split('').map(char => asianMap[char] || char).join('');
     }
 
+    if (style === 'crazy') {
+        const crazyMap = {
+            'a': 'α', 'b': 'в', 'c': '¢', 'd': '∂', 'e': 'є', 'f': 'ƒ', 'g': 'g', 'h': 'н', 'i': 'ι', 'j': 'נ',
+            'k': 'к', 'l': 'ℓ', 'm': 'м', 'n': 'η', 'o': 'σ', 'p': 'ρ', 'q': 'q', 'r': 'я', 's': 'ѕ', 't': 'т',
+            'u': 'υ', 'v': 'ν', 'w': 'ω', 'x': 'χ', 'y': 'у', 'z': 'z',
+            'A': 'α', 'B': 'в', 'C': '¢', 'D': '∂', 'E': 'є', 'F': 'ƒ', 'G': 'g', 'H': 'н', 'I': 'ι', 'J': 'נ',
+            'K': 'к', 'L': 'ℓ', 'M': 'м', 'N': 'η', 'O': 'σ', 'P': 'ρ', 'Q': 'q', 'R': 'я', 'S': 'ѕ', 'T': 'т',
+            'U': 'υ', 'V': 'ν', 'W': 'ω', 'X': 'χ', 'Y': 'у', 'Z': 'z'
+        };
+        return text.split('').map(char => crazyMap[char] || char).join('');
+    }
+
+    if (style === 'vaporwave') {
+        return text.split('').map(char => {
+            const code = char.charCodeAt(0);
+            // Full-width characters
+            if (code >= 33 && code <= 126) {
+                return String.fromCharCode(code + 0xFEE0);
+            }
+            return char;
+        }).join('');
+    }
+
+    if (style === 'glitch') {
+        return text.split('').map(char => {
+            if (char !== ' ' && char.match(/[a-zA-Z]/)) {
+                return char + '\u0334'; // combining tilde overlay
+            }
+            return char;
+        }).join('');
+    }
+
     const map = unicodeMap[style];
     if (!map) return text;
 
